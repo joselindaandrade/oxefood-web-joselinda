@@ -39,7 +39,7 @@ export default function FormProduto () {
                                     /> 
                                 </Form.Input>
                                 <Form.Input
-                                    required
+                                    
                                     fluid
                                     label='RG'>
                                     <InputMask
@@ -47,8 +47,10 @@ export default function FormProduto () {
                                         mask="999.99-99"
                                     /> 
                                 </Form.Input>
+                        </Form.Group>
+                        <Form.Group>
                                 <Form.Input
-                                    required
+                                    
                                     fluid
                                     label='DT nascimento'>
                                     <InputMask
@@ -66,7 +68,7 @@ export default function FormProduto () {
                                     /> 
                                 </Form.Input>
                                 <Form.Input
-                                    required
+                                    
                                     fluid
                                     label='Fone Fixo'>
                                     <InputMask
@@ -75,7 +77,7 @@ export default function FormProduto () {
                                     /> 
                                 </Form.Input>
                                 <Form.Input
-                                    required
+                                    
                                     fluid
                                     label='QTD entregas realizadas'>
                                     <InputMask
@@ -84,7 +86,7 @@ export default function FormProduto () {
                                     /> 
                                 </Form.Input>
                                 <Form.Input
-                                    required
+                                    
                                     fluid
                                     label='valor por frete'>
                                     <InputMask
@@ -92,8 +94,10 @@ export default function FormProduto () {
                                         
                                     /> 
                                 </Form.Input>
+                                </Form.Group>
+                                <Form.Group>
                                 <Form.Input
-                                    required
+                                    
                                     fluid
                                     label='Rua'>
                                     <InputMask
@@ -101,8 +105,9 @@ export default function FormProduto () {
                                         
                                     /> 
                                 </Form.Input>
+                                
                                 <Form.Input
-                                    required
+                            
                                     fluid
                                     label='Numero'>
                                     <InputMask
@@ -110,8 +115,10 @@ export default function FormProduto () {
                                         
                                     /> 
                                 </Form.Input>
+                                </Form.Group>
+                                <Form.Group>
                                 <Form.Input
-                                    required
+                                    
                                     fluid
                                     label='Bairro'>
                                     <InputMask
@@ -119,7 +126,7 @@ export default function FormProduto () {
                                         /> 
                                 </Form.Input>
                                 <Form.Input
-                                    required
+                                    
                                     fluid
                                     label='Cidade'>
                                     <InputMask
@@ -128,7 +135,7 @@ export default function FormProduto () {
                                     /> 
                                 </Form.Input>
                                 <Form.Input
-                                    required
+                                    
                                     fluid
                                     label='CEP'>
                                     <InputMask
@@ -136,8 +143,10 @@ export default function FormProduto () {
                                         mask="99.999-999"
                                     /> 
                                 </Form.Input>
+                                </Form.Group>
+                                <Form.Group>
                                 <Form.Input
-                                    required
+                                    
                                     fluid
                                     label='UF'>
                                     <InputMask
@@ -145,8 +154,10 @@ export default function FormProduto () {
                                         
                                     /> 
                                 </Form.Input>
+                                </Form.Group>
+                                <Form.Group>
                                 <Form.Input
-                                    required
+                                    
                                     fluid
                                     label='Complemento'>
                                     <InputMask
@@ -154,6 +165,7 @@ export default function FormProduto () {
                                         
                                     /> 
                                 </Form.Input>
+                                
                                 
                                 
                                 
