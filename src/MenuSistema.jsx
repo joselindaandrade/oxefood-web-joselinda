@@ -10,8 +10,11 @@ class MenuSistema extends React.Component{
    }
 
    handleItemClick = (e, { name }) => this.setState({ activeItem: name })
-
-   render(){
+   
+   logout = () => {
+    logout()
+}
+ render(){
        return(
            <>
                <Menu inverted>
@@ -36,8 +39,17 @@ class MenuSistema extends React.Component{
                        active={this.state.activeItem === 'produto'}
                        onClick={this.handleItemClick}
                        as={Link}
-                       to='/list-produto'
+                       to='/home'
                    />
+                     <Menu.Item
+                    className='navbar__item--mobile'
+                    onClick={this.logout}
+                    content='Sair'
+                    as={Link}
+                    to='/'
+                />
+        
+
 
                    <Menu.Item
                        name='entregador'
@@ -47,8 +59,20 @@ class MenuSistema extends React.Component{
                        to='/list-entregador'
                    />
 
+               
+
+               <Menu.Item
+                       name='fornecedor'
+                       active={this.state.activeItem === 'fornecedor'}
+                       onClick={this.handleItemClick}
+                       as={Link}
+                       to='/list-fornecedor'
+                   />
+
                </Menu>
-           </>
+        
+       
+       </>
        )
    }
 }

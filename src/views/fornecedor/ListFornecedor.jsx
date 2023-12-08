@@ -5,7 +5,7 @@ import { Button, Container, Divider, Header, Icon, Modal, Table } from 'semantic
 import MenuSistema from '../../MenuSistema';
 
 
-export default function ListCliente () {
+export default function ListFornecedor () {
 
    const [lista, setLista] = useState([]);
    const [openModal, setOpenModal] = useState(false);
@@ -18,7 +18,7 @@ export default function ListCliente () {
 
    function carregarLista() {
 
-       axios.get("http://localhost:8082/api/cliente")
+       axios.get("http://localhost:8080/api/fornecedor")
        .then((response) => {
            setLista(response.data)
        })
@@ -31,18 +31,18 @@ export default function ListCliente () {
 
     async function remover() {
 
-        await axios.delete('http://localhost:8082/api/cliente/' + idRemover)
+        await axios.delete('http://localhost:8080/api/fornecedor/' + idRemover)
         .then((response) => {
   
-            console.log('Cliente removido com sucesso.')
+            console.log('Fornecedor removido com sucesso.')
   
-            axios.get("http://localhost:8082/api/cliente")
+            axios.get("http://localhost:8080/api/fornecedor")
             .then((response) => {
                 setLista(response.data)
             })
         })
         .catch((error) => {
-            console.log('Erro ao remover um cliente.')
+            console.log('Erro ao remover um fornecedor.')
         })
         setOpenModal(false)
     }
@@ -64,7 +64,7 @@ return(
 
             <Container textAlign='justified' >
 
-                <h2> Cliente </h2>
+                <h2> Fornecedor </h2>
                 <Divider />
 
                 <div style={{marginTop: '4%'}}>
@@ -75,7 +75,7 @@ return(
                         icon='clipboard outline'
                         floated='right'
                         as={Link}
-                        to='/form-cliente'
+                        to='/form-fornecedor'
                     />
  <br/><br/><br/>
                   
@@ -84,44 +84,45 @@ return(
                       <Table.Header>
                           <Table.Row>
                               <Table.HeaderCell>Nome</Table.HeaderCell>
-                              <Table.HeaderCell>CPF</Table.HeaderCell>
-                              <Table.HeaderCell>Data de Nascimento</Table.HeaderCell>
-                              <Table.HeaderCell>Fone Celular</Table.HeaderCell>
-                              <Table.HeaderCell>Fone Fixo</Table.HeaderCell>
+                              <Table.HeaderCell>endereco</Table.HeaderCell>
+                              <Table.HeaderCell>Data Funcao</Table.HeaderCell>
+                              <Table.HeaderCell>Valor Mercado</Table.HeaderCell>
+                              <Table.HeaderCell>Pagina Web</Table.HeaderCell>
+                              <Table.HeaderCell>Contato Vendedor</Table.HeaderCell>
                               <Table.HeaderCell textAlign='center'>Ações</Table.HeaderCell>
                           </Table.Row>
                       </Table.Header>
                  
                       <Table.Body>
 
-                          { lista.map(cliente => (
+                          { lista.map(fornecedor => (
 
-                              <Table.Row key={cliente.id}>
-                                  <Table.Cell>{cliente.nome}</Table.Cell>
-                                  <Table.Cell>{cliente.cpf}</Table.Cell>
-                                  <Table.Cell>{formatarData(cliente.dataNascimento)}</Table.Cell>
-                                  <Table.Cell>{cliente.foneCelular}</Table.Cell>
-                                  <Table.Cell>{cliente.foneFixo}</Table.Cell>
+                              <Table.Row key={fornecedor.id}>
+                                  <Table.Cell>{fornecedor.nome}</Table.Cell>
+                                  <Table.Cell>{fornecedor.cpf}</Table.Cell>
+                                  <Table.Cell>{formatarData(fornecedor.dataNascimento)}</Table.Cell>
+                                  <Table.Cell>{fornecedor.foneCelular}</Table.Cell>
+                                  <Table.Cell>{fornecedor.foneFixo}</Table.Cell>
                                   <Table.Cell textAlign='center'>
 
                                       <Button
                                           inverted
                                           circular
                                           color='green'
-                                          title='Clique aqui para editar os dados deste cliente'
+                                          title='Clique aqui para editar os dados deste fornecedor'
                                           icon>
-                                             <Link to="/form-cliente" state={{id: cliente.id}} style={{color: 'green'}}> <Icon name='edit' /> </Link>
+                                             <Link to="/form-fornecedor" state={{id: fornecedor.id}} style={{color: 'green'}}> <Icon name='edit' /> </Link>
       </Button> 
-
+                                               
                                        &nbsp;
 
                                       <Button
                                                inverted
                                                circular
                                                color='red'
-                                               title='Clique aqui para remover este cliente'
+                                               title='Clique aqui para remover este fornecedor'
                                                icon>
-                                                onClick={e => confirmaRemover(cliente.id)}
+                                                onClick={e => confirmaRemover(fornecedor.id)}
 
                                                    <Icon name='trash' />
                                            </Button>
